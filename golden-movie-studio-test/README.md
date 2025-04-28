@@ -6,13 +6,13 @@ Este projeto de testes foi realizado durante a Jornada QA da EBAC, onde fizemos 
 
 ##  Pré-requisito 
 - **Node.js**
-    - Você encontra em https://nodejs.org/en/.
+    - Você encontra em: https://nodejs.org/en/.
 
 - **Visual Studio Code**
-    - Você encontra em https://code.visualstudio.com/download.
+    - Você encontra em: https://code.visualstudio.com/download.
 
 - **Git**
-    - Você encontra em https://git-scm.com/downloads.
+    - Você encontra em: https://git-scm.com/downloads.
 
 
 ## Execução de Comandos
@@ -23,13 +23,13 @@ Este projeto de testes foi realizado durante a Jornada QA da EBAC, onde fizemos 
     npm install
 ```
 
-- Para instalar o cypress
+- Para instalar o cypress:
 
 ```
     npm install cypress
 ```
 
-- Para executar o cypress
+- Para executar o cypress:
 
 ```
     npx cypress open
@@ -41,9 +41,11 @@ Não esqueça de subir o servidor e o banco, para isso, acesse o projeto que os 
     npm start
 ```
 
-Após a execução do comando anterior, acesse o site através do endereço http://127.0.0.1:8080.
+## Considerações Finais
 
-Caso necessite visualizar a documentação, acesse http://localhost:3000/api-docs/.
+A aplicação para realizar seus testes, localmente, está acessível pelo endereço: http://127.0.0.1:8080.
+
+Caso necessite visualizar a documentação, acesse: http://localhost:3000/api-docs/.
 
 ---
 
