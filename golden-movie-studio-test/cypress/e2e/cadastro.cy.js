@@ -4,7 +4,7 @@ import { faker } from "@faker-js/faker";
 
 describe("US-012: Cadastro de Membro", () => {
   beforeEach(() => {
-    cy.visit("http://127.0.0.1:8080/");
+    cy.visit("/");
   });
 
   it("Deve fazer o cadastro ao preencher os campos obrigatórios", () => {
@@ -12,14 +12,11 @@ describe("US-012: Cadastro de Membro", () => {
       firstName: faker.person.firstName(),
       lastName: faker.person.zodiacSign(),
       email: faker.internet.exampleEmail(),
+      phone: faker.number.int({ min: 1 }),
+      password: "S3cr3tP@55W0rD",
     };
 
-    cy.get("#signup-firstname").type(data.firstName);
-    cy.get("#signup-lastname").type(data.lastName);
-    cy.get("#signup-email").type(data.email);
-    cy.get("#signup-phone").type("123456789");
-    cy.get("#signup-password").type("Teste@123");
-    cy.get("#signup-button").click();
+    cy.preencherCadastro(data);
 
     cy.get("#signup-response").should(
       "contain",
@@ -27,36 +24,33 @@ describe("US-012: Cadastro de Membro", () => {
     );
   });
 
-  it("Deve fazer o cadastro sem preencher o telefone", () => {
+  it("Deve validar mensagem de erro com o campo nome inválido", () => {
     const data = {
-      firstName: faker.person.firstName(),
+      firstName: "123",
       lastName: faker.person.zodiacSign(),
       email: faker.internet.exampleEmail(),
+      phone: faker.number.int({ min: 1 }),
+      password: "S3cr3tP@55W0rD",
     };
 
-    cy.get("#signup-firstname").type(data.firstName);
-    cy.get("#signup-lastname").type(data.lastName);
-    cy.get("#signup-email").type(data.email);
-    cy.get("#signup-password").type("Teste@123");
-    cy.get("#signup-button").click();
+    cy.preencherCadastro(data);
 
     cy.get("#signup-response").should(
       "contain",
-      "Cadastro realizado com sucesso!"
+      "Nome deve conter apenas caracteres alfabéticos, acentuados e espaços"
     );
   });
 
-  it("Não deve cadastrar com e-mail inválido", () => {
+  it("Deve validar mensagem de erro com o e-mail inválido", () => {
     const data = {
       firstName: faker.person.firstName(),
       lastName: faker.person.zodiacSign(),
+      email: "email",
+      phone: faker.number.int({ min: 1 }),
+      password: "S3cr3tP@55W0rD",
     };
 
-    cy.get("#signup-firstname").type(data.firstName);
-    cy.get("#signup-lastname").type(data.lastName);
-    cy.get("#signup-email").type("xablau@");
-    cy.get("#signup-password").type("Te@1");
-    cy.get("#signup-button").click();
+    cy.preencherCadastro(data);
 
     cy.get("#signup-response").should(
       "contain",
@@ -64,35 +58,43 @@ describe("US-012: Cadastro de Membro", () => {
     );
   });
 
-  it("Não deve cadastrar sem preencher os campos obrigatórios", () => {
-    cy.get("#signup-button").click();
-    
-    cy.get("#signup-response").should(
-      "contain",
-      "Nome não pode estar vazio"
-    );
-  });
-
-  it('Não deve cadastrar com senha fraca', () => {
+  it("Deve validar mensagem de erro com senha fraca", () => {
     const data = {
       firstName: faker.person.firstName(),
       lastName: faker.person.zodiacSign(),
       email: faker.internet.exampleEmail(),
+      phone: faker.number.int({ min: 1 }),
+      password: "123",
     };
 
-    cy.get("#signup-firstname").type(data.firstName);
-    cy.get("#signup-lastname").type(data.lastName);
-    cy.get("#signup-email").type(data.email);
-    cy.get("#signup-password").type("Teste");
-    cy.get("#signup-button").click();
+    cy.preencherCadastro(data);
 
     cy.get("#signup-response").should(
       "contain",
       "Senha deve ter pelo menos 8 caracteres, incluir uma letra maiúscula, um número e um caractere especial (!@#$&*)"
     );
-    
-
-
   });
 
+  it("Deve validar mensagem de erro com o campo sobrenome inválido", () => {
+    const data = {
+      firstName: faker.person.firstName(),
+      lastName: "123",
+      email: faker.internet.exampleEmail(),
+      phone: faker.number.int({ min: 1 }),
+      password: "S3cr3tP@55W0rD",
+    };
+
+    cy.preencherCadastro(data);
+
+    cy.get("#signup-response").should(
+      "contain",
+      "Sobrenome deve conter apenas caracteres alfabéticos, acentuados e espaços"
+    );
+  });
+
+  it("Não deve cadastrar sem preencher os campos obrigatórios", () => {
+    cy.get("#signup-button").click();
+
+    cy.get("#signup-response").should("contain", "Nome não pode estar vazio");
+  });
 });
