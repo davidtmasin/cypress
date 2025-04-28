@@ -6,7 +6,7 @@ O objetivo deste repositório é de concentrar todos os projetos de testes autom
 
 ## Projetos
 
-- 
+- [Golden Movie Studio - Automação Web](https://github.com/davidtmasin/golden-movie-studio-test).
 
 
 ---
