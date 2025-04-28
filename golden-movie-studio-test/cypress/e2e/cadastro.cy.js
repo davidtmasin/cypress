@@ -7,6 +7,10 @@ describe("US-012: Cadastro de Membro", () => {
     cy.visit("/");
   });
 
+  afterEach(() => {
+    cy.screenshot();
+  });
+
   it("Deve fazer o cadastro ao preencher os campos obrigatórios", () => {
     const data = {
       firstName: faker.person.firstName(),
