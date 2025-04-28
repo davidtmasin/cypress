@@ -5,32 +5,41 @@ Este projeto de testes foi realizado durante a Jornada QA da EBAC, onde fizemos 
 ---
 
 ##  Pré-requisito 
-- Node.js 
-    - Você encontra em https://nodejs.org/en/
+- **Node.js**
+    - Você encontra em https://nodejs.org/en/.
 
-- Visual Studio Code
-    - Você encontra em https://code.visualstudio.com/download
+- **Visual Studio Code**
+    - Você encontra em https://code.visualstudio.com/download.
 
-- Git
-    - Você encontra em https://git-scm.com/downloads
+- **Git**
+    - Você encontra em https://git-scm.com/downloads.
+
 
 Via terminal, rode os seguintes comandos:
 
 - Para instalar as dependências do projeto:
 
-``npm install``
+```
+    npm install
+```
 
 - Para instalar o cypress
 
-``npm install cypress``
+```
+    npm install cypress
+```
 
 - Para executar o cypress
 
-``npx cypress open``
+```
+    npx cypress open
+```
 
 Não esqueça de subir o servidor e o banco, para isso, acesse o projeto que os contém e execute:
 
-``npm start``
+```
+    npm start
+```
 
 Após a execução do comando anterior, acesse o site através do endereço http://127.0.0.1:8080.
 
