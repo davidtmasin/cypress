@@ -1,6 +1,6 @@
 # Cypress
 
-O objetivo deste repositório é de concentrar todos os projetos de testes automatizados realizados com Cypress. Diante disso, este repositório será utilizado para fins de portfólio e na confirmação de conhecimento e habilidades no uso desta ferramenta.
+O objetivo deste repositório é de ser um HUB para os projetos de testes automatizados realizados com Cypress. Diante disso, este repositório será utilizado para fins de portfólio e na confirmação de conhecimento e habilidades no uso desta ferramenta.
 
 ---
 
