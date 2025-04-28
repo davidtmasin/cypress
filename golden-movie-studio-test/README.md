@@ -1,6 +1,6 @@
 # Projeto de Testes - Golden Movie Studio
 
-Este projeto de testes foi realizado durante a Jornada QA da EBAC, onde fizemos o uso da ferramenta Cypress para a realização dos testes automatizados na aplicação web Golden Movie Studio (GMS).
+Este projeto de testes foi realizado durante a Jornada QA da EBAC, onde fizemos o uso da ferramenta Cypress para a realização dos testes automatizados na aplicação web Golden Movie Studio (GMS) para validar as funcionalidade de Cadastro de Membros, Busca de Filmes e Recomendações.
 
 ---
 
@@ -43,9 +43,12 @@ Não esqueça de subir o servidor e o banco, para isso, acesse o projeto que os 
 
 ## Considerações Finais
 
-A aplicação para realizar seus testes, localmente, está acessível pelo endereço: http://127.0.0.1:8080.
+A aplicação web para realizar seus testes, localmente, está acessível pelo endereço: http://127.0.0.1:8080.
+
+Caso não queira acessar a aplicação localmente, você pode utilizar o endereço: https://golden-movie-studio.vercel.app/.
 
 Caso necessite visualizar a documentação, acesse: http://localhost:3000/api-docs/.
 
 ---
 
+Copyright © 2025 David Teixeira de Masin
