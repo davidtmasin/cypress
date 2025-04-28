@@ -15,7 +15,7 @@ Este projeto de testes foi realizado durante a Jornada QA da EBAC, onde fizemos 
     - Você encontra em https://git-scm.com/downloads.
 
 
-Via terminal, rode os seguintes comandos:
+## Execução de Comandos
 
 - Para instalar as dependências do projeto:
 
