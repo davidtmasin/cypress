@@ -45,7 +45,7 @@ Não esqueça de subir o servidor e o banco, para isso, acesse o projeto que os 
 
 A aplicação web para realizar seus testes, localmente, está acessível pelo endereço: http://127.0.0.1:8080.
 
-Caso não queira acessar a aplicação localmente, você pode utilizar o endereço: https://golden-movie-studio.vercel.app/.
+Caso não queira acessar a aplicação em produção, você pode utilizar o endereço: https://golden-movie-studio.vercel.app/.
 
 Caso necessite visualizar a documentação, acesse: http://localhost:3000/api-docs/.
 
