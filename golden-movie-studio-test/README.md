@@ -28,13 +28,13 @@ Via terminal, rode os seguintes comandos:
 
 ``npx cypress open``
 
-Não esqueça de subir o servidor e o banco, para isso, acesse o projeto e execute:
+Não esqueça de subir o servidor e o banco, para isso, acesse o projeto que os contém e execute:
 
 ``npm start``
 
-Após isso, acesse o site através do endereço http://127.0.0.1:8080.
+Após a execução do comando anterior, acesse o site através do endereço http://127.0.0.1:8080.
 
-Caso necessite acessar a documentação, acesse http://localhost:3000/api-docs/.
+Caso necessite visualizar a documentação, acesse http://localhost:3000/api-docs/.
 
 ---
 
